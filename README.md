@@ -1,4 +1,4 @@
-# Understanding Random Processes
+# Visualizing Random Processes
 
 This is a quick tutorial for visualizing and understanding simple random walks and branching processes.
 
@@ -11,8 +11,33 @@ A simple random walk with parameter *p* in (0,1) is a sequence {X_n} of random v
 
 -1    |1     
 --- | ---
-(1-p) |p    
+(1-*p*) |*p*    
 
+Basically, at each time n+1, we take a step up with probability *p* or a step down with probability (1 - *p*).
+
+We can visualize this process in R using just a few lines of code.
+
+```r
+# set probability of moving up at time t+1
+# initialize set of moves and position at time = 0
+p = 0.3
+s = 0
+s[1] = 0
+
+
+# generate N = 100 random values in (0,1) 
+# assign -1 if < p, 1 if >=p
+N = 100
+
+for(i in 2:N)
+{
+x = runif(1)
+if(x<p) {s[i]=s[i-1]+1} else {s[i]=s[i-1]-1}
+}  
+
+# generate basic plot
+plot(s, type ="l")
+```
 
 
 
