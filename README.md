@@ -4,10 +4,10 @@ This is a quick tutorial for visualizing and understanding simple random walks a
 
 ## Simple Random Walks
 
-A simple random walk with parameter *p* in (0,1) is a sequence {X_n} of random variables with the following properties:
-1. X_0 = 0
-2. X_n+1 - X_n is independent of (X_0, X_1, ..., X_n) for all n
-3. The random variable X_n+1 - X_n has the following distribution:
+A simple random walk with parameter <a href="https://www.codecogs.com/eqnedit.php?latex=p&space;\in&space;(0,&space;1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p&space;\in&space;(0,&space;1)" title="p \in (0, 1)" /></a> is a sequence <a href="https://www.codecogs.com/eqnedit.php?latex=\{X_n\}_{n&space;\in&space;\mathbb{N}_0}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\{X_n\}_{n&space;\in&space;\mathbb{N}_0}" title="\{X_n\}_{n \in \mathbb{N}_0}" /></a> of random variables with the following properties:
+1. <a href="https://www.codecogs.com/eqnedit.php?latex=X_0&space;=&space;0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_0&space;=&space;0" title="X_0 = 0" /></a>
+2. <a href="https://www.codecogs.com/eqnedit.php?latex=X_{n&plus;1}&space;-&space;X_n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{n&plus;1}&space;-&space;X_n" title="X_{n+1} - X_n" /></a> is independent of <a href="https://www.codecogs.com/eqnedit.php?latex=\(X_0,&space;X_1,&space;...,&space;X_n\)&space;\forall&space;n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\(X_0,&space;X_1,&space;...,&space;X_n\)&space;\forall&space;n" title="\(X_0, X_1, ..., X_n\) \forall n" /></a>
+3. The random variable <a href="https://www.codecogs.com/eqnedit.php?latex=X_{n&plus;1}&space;-&space;X_n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{n&plus;1}&space;-&space;X_n" title="X_{n+1} - X_n" /></a> has the following distribution:
 
 -1    |1     
 --- | ---
@@ -26,7 +26,7 @@ s[1] = 0
 
 
 # generate N = 100 random values in (0,1) 
-# assign -1 if < p, 1 if >=p
+# assign 1 if < p, -1 if >=p
 N = 100
 
 for(i in 2:N)
@@ -38,6 +38,9 @@ if(x<p) {s[i]=s[i-1]+1} else {s[i]=s[i-1]-1}
 # generate basic plot
 plot(s, type ="l")
 ```
+
+
+
 
 
 
