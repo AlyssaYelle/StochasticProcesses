@@ -8,8 +8,10 @@ A simple random walk with parameter *p* in (0,1) is a sequence {X_n} of random v
 1. X_0 = 0
 2. X_n+1 - X_n is independent of (X_0, X_1, ..., X_n) for all n
 3. The random variable X_n+1 - X_n has the following distribution:
-|-1    |1     |
-|:----:|:----:|
-|(1-p) |p     |
+-1    |1     
+--- | ---
+(1-p) |p    
+
+
 
 
