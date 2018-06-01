@@ -9,8 +9,8 @@ s<-0
 N = 1000
 #initialize position at time 0
 s[1] = 0
-#generate N random values in (0,1) 
-#assign -1 if < p, 1 if >=p
+#generate N random values from Uniform(0,1) distribution
+#assign 1 if < p, -1 if >=p
 for(i in 2:N)
 {
 x = runif(1)

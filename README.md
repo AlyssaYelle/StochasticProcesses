@@ -25,7 +25,7 @@ s = 0
 s[1] = 0
 
 
-# generate N = 100 random values in (0,1) 
+# generate N = 100 random values from a Uniform(0,1) distribution 
 # assign 1 if < p, -1 if >=p
 N = 100
 
