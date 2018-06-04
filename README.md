@@ -1,6 +1,8 @@
 # Visualizing Random Processes
 
-This is a quick tutorial for visualizing and understanding simple random walks and branching processes.
+This is a quick tutorial for visualizing and developing a basic understanding of simple random walks and branching processes. We're not going to get deep into the math here ([Gordan Zitkovic's Stochastic Processes notes](https://www.ma.utexas.edu/users/gordanz/notes/) can explain all of that better than I ever could), rather we're going to simulate these processes to see what is actually occuring over time.
+
+Before we start, you might ask why we even care about random processes. Given that "because random processes are NEATO" isn't a satisfying answer for most people, let's consider some practical applications.
 
 ## Simple Random Walks
 
@@ -20,7 +22,7 @@ We can visualize this process in R using just a few lines of code.
 ```r
 # set probability of moving up at time t+1
 # initialize set of moves and position at time = 0
-p = 0.3
+p = 0.5
 s = 0
 s[1] = 0
 
@@ -39,7 +41,13 @@ if(x<p) {s[i]=s[i-1]+1} else {s[i]=s[i-1]-1}
 plot(s, type ="l")
 ```
 
+What does this actually look like, though? Let's look at plots for *p* = 0.4, 0.5, and 0.9.
 
+![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/randwalkp4.png "p = 0.4")
+
+![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/symrandwalk.png "p = 0.5")
+
+![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/randwalkp9.png "p = 0.9")
 
 
 
