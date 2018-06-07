@@ -18,6 +18,11 @@ from matplotlib import colors as mcolors
 if __name__ == '__main__':
 	#import data
 	df = pd.read_csv('data/data.csv', header = 0)
+	plt.hist(df['data'], color = 'thistle', bins = 20)
+	plt.xlabel('Data Value')
+	plt.ylabel('Frequency')
+	plt.show()
+	plt.close()
 
 
 	#initialize posterior lists
