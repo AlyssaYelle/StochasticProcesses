@@ -2,7 +2,7 @@
 
 This is a quick tutorial for visualizing and developing a basic understanding of simple random walks and branching processes. We're not going to get deep into the math here ([Gordan Zitkovic's Stochastic Processes notes](https://www.ma.utexas.edu/users/gordanz/notes/) can explain all of that better than I ever could), rather we're going to simulate these processes to see what is actually occuring over time.
 
-Before we start, you might ask why we even care about random processes. Given that "because random processes are NEATO" isn't a satisfying answer for most people, let's consider some practical applications.
+Before we start, you might ask why we even care about random processes. Given that "because random processes are NEATO" isn't a satisfying answer for most people, let's consider some practical applications. We can use random walks to approximate price fluctuation in the stock market or to simulate the movement of molecules in liquids and gasses. Branching processes are useful for modeling reproduction, and the probability that a certain population will go extinct. 
 
 ## Simple Random Walks
 
@@ -48,6 +48,8 @@ What does this actually look like, though? Let's look at plots for *p* = 0.4, 0.
 ![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/symrandwalk.png "p = 0.5")
 
 ![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/randwalkp9.png "p = 0.9")
+
+Now, it's important to remember that while these processes are beholden to some probability distribution, they are *random*. For any random walk with parameter *p* I could run the simulation 10 times and produce 10 different plots.
 
 
 
