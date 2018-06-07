@@ -52,5 +52,50 @@ What does this actually look like, though? Let's look at plots for *p* = 0.4, 0.
 Now, it's important to remember that while these processes are beholden to some probability distribution, they are *random*. For any random walk with parameter *p* I could run the simulation 10 times and produce 10 different plots.
 
 
+## Branching Processes
+
+To model a branching process we want to start with a single individual, <a href="https://www.codecogs.com/eqnedit.php?latex=Z_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_0" title="Z_0" /></a>, at time n = 0, and assume that they will produce a random number of children before dying off. The number of children they can produce may only be a nonnegative integer, so we will model this random variable using a Poisson distribution with parameter lambda, where lambda is the expected value.
+
+If our initial individual produces 0 children, the population is dead and nothing will happen at any time going forward. If they produce <a href="https://www.codecogs.com/eqnedit.php?latex=Z_1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_1" title="Z_1" /></a> > 0 children, the children will then go on to reproduce as well. If none of them produce children, the population dies off. Otherwise, at time n = 2 we will have <a href="https://www.codecogs.com/eqnedit.php?latex=Z_2&space;=&space;\sum_{i&space;=&space;1}^{Z_1}Z_{1,i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_2&space;=&space;\sum_{i&space;=&space;1}^{Z_1}Z_{1,i}" title="Z_2 = \sum_{i = 1}^{Z_1}Z_{1,i}" /></a> individuals in the population. If it ever happens that Z_n = 0, our population is extinct. Otherwise, <a href="https://www.codecogs.com/eqnedit.php?latex=Z_{n&plus;1}&space;=&space;\sum_{i&space;=&space;1}^{Z_n}Z_{n,i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_{n&plus;1}&space;=&space;\sum_{i&space;=&space;1}^{Z_n}Z_{n,i}" title="Z_{n+1} = \sum_{i = 1}^{Z_n}Z_{n,i}" /></a>.
+
+When I first learned about branching processes I found it difficult to really visualize what's going on simply based on the math, and coding it up really helped me out. So let's look at the code and generate some plots!
+
+```r
+#over multiple trials we will show that if population does not immediately die off it will explode
+
+#initialize list of population size at generation n
+Z<-1
+
+#pop. size 1 at generation 0
+Z[0] = 1
+
+#poisson r.v.
+#each member generates poisson(lambda) offspring
+#sum offspring
+lambda = 2
+N = 20
+
+Z[1] = rpois(Z[0], lambda)
+
+for (i in 2:N)
+{
+  if(Z[i-1]==0) {Z[i]=0} else 
+    {
+      x=rpois(Z[i-1], lambda) 
+      Z[i] = sum(x)
+    }
+}
+Z
+plot(Z, type = "l")
+```
+
+I like to run this simulation using lambda = 2 because over multiple trials we can clearly see that if the population does not die off within the first few generations, it will explode. See the plots below.
+
+![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/branchpopdeath.png "Population death")
+![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/branchpopexplode.png "Population explodes")
+
+
+
+
 
 
