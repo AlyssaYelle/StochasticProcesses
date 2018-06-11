@@ -54,6 +54,10 @@ Now, it's important to remember that while these processes are beholden to some 
 
 ## Branching Processes
 
+Every once in a while a mathematical concept will arise from an individual with problematic views, and the branching process is one of them. Sir Francis Galton, also known as the father of eugenics, questioned how many male children each generation of a family would have to produce on average in order for the family line to not become extinct. After a collaboration with Henry William Watson, the branching process model was born.
+
+Thankfully, branching processes have applications outside of eugenics. For example, we can use them to model whether a population of cancerous cells will become extinct before it grows large enough to overwhelm the surrounding tissue.
+
 ### Modeling a Single Branching Process
 
 To model a branching process we want to start with a single individual, <a href="https://www.codecogs.com/eqnedit.php?latex=Z_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_0" title="Z_0" /></a>, at time n = 0, and assume that they will produce a random number of children before dying off. The number of children they can produce may only be a nonnegative integer, so we will model this random variable using a Poisson distribution with parameter lambda, where lambda is the expected value.
@@ -98,6 +102,12 @@ I like to run this simulation using lambda = 2 because over multiple trials we c
 
 
 ### Approximating the Probability of Extinction
+
+
+
+## Ref
+- My own personal notes from [Stephen Walker's](https://stat.utexas.edu/component/cobalt/item/15-mathematics/385-walker-stephen-g?Itemid=1176) Stochastic Processes class at UT Austin
+- [Gordan Zitkovic's](https://www.ma.utexas.edu/users/gordanz/) lecture notes on [random walks](https://www.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) and [branching processes](https://www.ma.utexas.edu/users/gordanz/notes/lecture7.pdf)
 
 
 
