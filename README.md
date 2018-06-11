@@ -54,6 +54,8 @@ Now, it's important to remember that while these processes are beholden to some 
 
 ## Branching Processes
 
+### Modeling a Single Branching Process
+
 To model a branching process we want to start with a single individual, <a href="https://www.codecogs.com/eqnedit.php?latex=Z_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_0" title="Z_0" /></a>, at time n = 0, and assume that they will produce a random number of children before dying off. The number of children they can produce may only be a nonnegative integer, so we will model this random variable using a Poisson distribution with parameter lambda, where lambda is the expected value.
 
 If our initial individual produces 0 children, the population is dead and nothing will happen at any time going forward. If they produce <a href="https://www.codecogs.com/eqnedit.php?latex=Z_1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_1" title="Z_1" /></a> > 0 children, the children will then go on to reproduce as well. If none of them produce children, the population dies off. Otherwise, at time n = 2 we will have <a href="https://www.codecogs.com/eqnedit.php?latex=Z_2&space;=&space;\sum_{i&space;=&space;1}^{Z_1}Z_{1,i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_2&space;=&space;\sum_{i&space;=&space;1}^{Z_1}Z_{1,i}" title="Z_2 = \sum_{i = 1}^{Z_1}Z_{1,i}" /></a> individuals in the population. If it ever happens that Z_n = 0, our population is extinct. Otherwise, <a href="https://www.codecogs.com/eqnedit.php?latex=Z_{n&plus;1}&space;=&space;\sum_{i&space;=&space;1}^{Z_n}Z_{n,i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Z_{n&plus;1}&space;=&space;\sum_{i&space;=&space;1}^{Z_n}Z_{n,i}" title="Z_{n+1} = \sum_{i = 1}^{Z_n}Z_{n,i}" /></a>.
@@ -93,6 +95,9 @@ I like to run this simulation using lambda = 2 because over multiple trials we c
 
 ![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/branchpopdeath.png "Population death")
 ![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/branchpopexplode.png "Population explodes")
+
+
+### Approximating the Probability of Extinction
 
 
 
