@@ -104,8 +104,17 @@ I like to run this simulation using lambda = 2 because over multiple trials we c
 
 ### Approximating the Probability of Extinction
 
+Since branching processes are random, running a single simulation is rather worthless if we're seeking some kind of concrete information. For example, one question we could ask is *what is the probability that population reproducing itself from a Poisson(2) distribution will become extinct?*
+
+If you've taken a class on stochastic processes then you know we can find this probability using generating functions, but what if you don't know what a generating function is? 
+
+Well, if we can [simulate one branching process](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/branching_process.R), we can [simulate hundreds of branching processes](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/extinction_prob.py) and thus approximate the probability of extinction.
+
+After simulating a Poisson(2) branching process 300 times, I found that the extinction probability is around 0.2, which is the same solution we would find using the generating function <a href="https://www.codecogs.com/eqnedit.php?latex=x&space;=&space;e^{(\lambda(x-1))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x&space;=&space;e^{(\lambda(x-1))}" title="x = e^{(\lambda(x-1))}" /></a>.
 
 ## Regime Switching
+
+![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/regime_switching.png "Regime Switching")
 
 
 ## Ref
