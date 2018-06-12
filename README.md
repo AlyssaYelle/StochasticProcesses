@@ -2,7 +2,8 @@
 
 This is a quick tutorial for visualizing and developing a basic understanding of simple random walks and branching processes. As this is geared toward individuals who may not have taken a probability course yet, we're not going to get deep into the math here (Although if you are interested in the maths, [Gordan Zitkovic's Stochastic Processes notes](https://www.ma.utexas.edu/users/gordanz/notes/) can explain all of that better than I ever could). Rather, we're going to simulate these processes to see what is actually occuring over time.
 
-Before we start, you might ask why we even care about random processes. Given that "because random processes are NEATO" isn't a satisfying answer for most people, let's consider some practical applications. We can use random walks to approximate price fluctuation in the stock market or to simulate the movement of molecules in liquids and gasses. Branching processes are useful for modeling reproduction, and the probability that a certain population will go extinct. 
+Before we start, you might ask why we even care about random processes. Given that "because random processes are NEATO" isn't a satisfying answer for most people, let's consider some practical applications. We can use random walks to approximate price fluctuation in the stock market or to simulate the movement of molecules in liquids and gasses. Branching processes are useful for modeling reproduction, and the probability that a certain population will go extinct. I personally have made use of random processes as part of my ongoing attempts to [automatically map the Antarctic Ice Sheet.](https://github.com/AlyssaYelle/auto-piking)
+
 
 ## Simple Random Walks
 
@@ -103,6 +104,8 @@ I like to run this simulation using lambda = 2 because over multiple trials we c
 
 ### Approximating the Probability of Extinction
 
+
+## Regime Switching
 
 
 ## Ref
