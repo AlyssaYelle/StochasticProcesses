@@ -1,8 +1,10 @@
 # Visualizing Random Processes
 
-This is a quick tutorial for visualizing and developing a basic understanding of simple random walks and branching processes. As this is geared toward individuals who may not have taken a probability course yet, we're not going to get deep into the math here (Although if you are interested in the maths, [Gordan Zitkovic's Stochastic Processes notes](https://www.ma.utexas.edu/users/gordanz/notes/) can explain all of that better than I ever could). Rather, we're going to simulate these processes to see what is actually occuring over time.
+This is a quick tutorial for visualizing and developing a basic understanding of simple random walks, branching processes, and regime switching. As this is geared toward individuals who may not have taken a probability course yet, we're not going to get deep into the math here (Although if you are interested in the maths, [Gordan Zitkovic's Stochastic Processes notes](https://www.ma.utexas.edu/users/gordanz/notes/) can explain all of that better than I ever could). Rather, we're going to simulate these processes to see what is actually occuring over time.
 
 Before we start, you might ask why we even care about random processes. Given that "because random processes are NEATO" isn't a satisfying answer for most people, let's consider some practical applications. We can use random walks to approximate price fluctuation in the stock market or to simulate the movement of molecules in liquids and gasses. Branching processes are useful for modeling reproduction, and the probability that a certain population will go extinct. I personally have made use of random processes as part of my ongoing attempts to [automatically map the Antarctic Ice Sheet.](https://github.com/AlyssaYelle/auto-piking)
+
+In this tutorial we aren't going to apply these concepts to any problems -- that will come later. Rather, we're just going to visualize them in order to build up our intuition about what is happening behind all the maths.
 
 
 ## Simple Random Walks
@@ -120,7 +122,8 @@ We can represent these states as 0 and 1 and then construct a stochastic matrix 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\begin{bmatrix}&space;p_{00}&space;&&space;p_{01}&space;\\&space;p_{10}&space;&&space;p_{11}&space;\\&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;p_{00}&space;&&space;p_{01}&space;\\&space;p_{10}&space;&&space;p_{11}&space;\\&space;\end{bmatrix}" title="P = \begin{bmatrix} p_{00} & p_{01} \\ p_{10} & p_{11} \\ \end{bmatrix}" /></a>
 
-The plot below was [generated](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/markov_chain.py) using the stochastic matrix <a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\begin{bmatrix}&space;0.95&space;&&space;0.05&space;\\&space;0.01&space;&&space;0.99&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;0.95&space;&&space;0.05&space;\\&space;0.01&space;&&space;0.99&space;\end{bmatrix}" title="P = \begin{bmatrix} 0.95 & 0.05 \\ 0.01 & 0.99 \end{bmatrix}" /></a>
+The plot below was [generated](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/markov_chain.py) using the stochastic matrix
+ <a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\begin{bmatrix}&space;0.95&space;&&space;0.05&space;\\&space;0.01&space;&&space;0.99&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;0.95&space;&&space;0.05&space;\\&space;0.01&space;&&space;0.99&space;\end{bmatrix}" title="P = \begin{bmatrix} 0.95 & 0.05 \\ 0.01 & 0.99 \end{bmatrix}" /></a>
 
 ![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/regime_switching.png "Regime Switching")
 
