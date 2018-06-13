@@ -114,6 +114,14 @@ After simulating a Poisson(2) branching process 300 times, I found that the exti
 
 ## Regime Switching
 
+What if we want to consider a system that has only two states? Some examples of such a system would be high/low volatility in a financial market, english/non-english text in a work of literature, or my personal favorite example, the presence of water or no water underneath an ice sheet.
+
+We can represent these states as 0 and 1 and then construct a stochastic matrix where <a href="https://www.codecogs.com/eqnedit.php?latex=p_{00}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{00}" title="p_{00}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=p_{11}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p_{11}" title="p_{11}" /></a> are the probabilities of remaining in the current state and <a href="https://www.codecogs.com/eqnedit.php?latex=P_{10}&space;=&space;1&space;-&space;p_{11}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_{10}&space;=&space;1&space;-&space;p_{11}" title="P_{10} = 1 - p_{11}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=P_{01}&space;=&space;1&space;-&space;p_{00}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_{01}&space;=&space;1&space;-&space;p_{00}" title="P_{01} = 1 - p_{00}" /></a> are the probabilities of switching states:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\begin{bmatrix}&space;p_{00}&space;&&space;p_{01}&space;\\&space;p_{10}&space;&&space;p_{11}&space;\\&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;p_{00}&space;&&space;p_{01}&space;\\&space;p_{10}&space;&&space;p_{11}&space;\\&space;\end{bmatrix}" title="P = \begin{bmatrix} p_{00} & p_{01} \\ p_{10} & p_{11} \\ \end{bmatrix}" /></a>
+
+The plot below was [generated](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/markov_chain.py) using the stochastic matrix <a href="https://www.codecogs.com/eqnedit.php?latex=P&space;=&space;\begin{bmatrix}&space;0.95&space;&&space;0.05&space;\\&space;0.01&space;&&space;0.99&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;0.95&space;&&space;0.05&space;\\&space;0.01&space;&&space;0.99&space;\end{bmatrix}" title="P = \begin{bmatrix} 0.95 & 0.05 \\ 0.01 & 0.99 \end{bmatrix}" /></a>
+
 ![alt text](https://github.com/AlyssaYelle/StochasticProcesses/blob/master/plots/regime_switching.png "Regime Switching")
 
 
